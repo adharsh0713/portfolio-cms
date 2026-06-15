@@ -9,37 +9,34 @@ VALUES ('luffy', 'luffy@gmail.com', '$2b$10$gmoZ/zp7lfUK8tAAkV3MTOZUjuM1I3WAyIvN
 -- PROJECTS
 
 INSERT INTO projects (title,
-                      slug,
                       description,
+                      tech_stack,
+                      image_url,
                       github_url,
                       live_url,
-                      technologies,
                       featured)
 VALUES ('Portfolio CMS',
-        'portfolio-cms',
         'A full-stack content management system for managing portfolio projects and blog posts.',
+        ARRAY ['React', 'Node.js', 'Express', 'PostgreSQL'],
+        'https://image.jpeg',
         'https://github.com/adharsh0713/portfolio-cms',
         'https://portfolio-cms-demo.com',
-        ARRAY ['React', 'Node.js', 'Express', 'PostgreSQL'],
         TRUE);
 
 -- BLOG POSTS
 
 INSERT INTO blog_posts (title,
                         slug,
-                        excerpt,
-                        content,
+                        body,
                         status,
                         published_at)
 VALUES ('How I Built My Portfolio CMS',
         'how-i-built-my-portfolio-cms',
-        'Building a portfolio CMS using React, Express and PostgreSQL.',
         'This article explains the architecture, database design, API development and deployment process used in building the Portfolio CMS project.',
         'published',
         CURRENT_TIMESTAMP),
        ('PostgreSQL Notes for Beginners',
         'postgresql-notes-for-beginners',
-        'Important PostgreSQL concepts every backend developer should know.',
         'This article covers tables, constraints, joins, indexes, transactions and practical SQL commands.',
         'published',
         CURRENT_TIMESTAMP);
