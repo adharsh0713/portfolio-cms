@@ -3,7 +3,7 @@ export const validateId = (req, res, next) => {
 
   if (!Number.isInteger(id) || id <= 0) {
     return res.status(400).json({
-      message: 'Invalid project id',
+      error: 'Invalid project id',
     });
   }
 

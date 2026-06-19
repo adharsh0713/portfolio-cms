@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 
 import projectRoutes from './src/routes/project.routes.js';
+import blogRoutes from './src/routes/blog.routes.js';
 
 dotenv.config();
 const app = express();
@@ -13,6 +14,8 @@ app.get('/health', (req, res) => {
 });
 
 app.use('/api/projects', projectRoutes);
+
+app.use('/api/posts', blogRoutes);
 
 const PORT = process.env.PORT || 3000;
 
